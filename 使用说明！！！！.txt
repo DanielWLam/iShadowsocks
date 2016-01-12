@@ -1,3 +1,3 @@
-1、首先运行shadowsocks！
-2、用命令行运行脚本文件，windows运行iShadow.bat，在命令行直接输入iShadow.bat即可，mac和linux用户直接输入iShadow.sh。
+1、首先用命令行运行脚本文件，windows运行iShadow.bat，在命令行直接输入iShadow.bat即可，mac和linux用户直接输入iShadow.sh。
+2、然后运行shadowsocks！
 3、chrome的常规插件配置。。。SwitchySharp。。。详情请百度。。（后续可能会带上这个插件和教程）

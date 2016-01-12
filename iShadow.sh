@@ -1,1 +1,1 @@
-forever start shadow.js
+forever start ./dist/shadow.js

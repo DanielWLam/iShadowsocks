@@ -6,7 +6,7 @@ var request = require('request'),
 
 //每小时30分时执行一次更新操作
 var rule = new schedule.RecurrenceRule();
-rule.minute = 47;
+rule.hour = [0,6,12,18,24];
 var j = schedule.scheduleJob(rule, getPassword);
 //运行时先执行一次
 getPassword();
@@ -25,17 +25,23 @@ function getPassword() {
         if (tmp.match(usPatt)) {
             var t = tmp.match(usPatt).toString().replace('A密码:', '');
             passwords.push(t);
+        } else {
+            passwords.push('111');
         }
         if (tmp.match(hkPatt)) {
             var t = tmp.match(hkPatt).toString().replace('B密码:', '');
             passwords.push(t);
+        } else {
+            passwords.push('111');
         }
         if (tmp.match(jpPatt)) {
             var t = tmp.match(jpPatt).toString().replace('C密码:', '');
             passwords.push(t);
+        } else {
+            passwords.push('111');
         }
 
-        fileContentObj = JSON.parse(fs.readFileSync('gui-config.json', {
+        fileContentObj = JSON.parse(fs.readFileSync('tpl.json', {
             encoding: 'utf8'
         }));
 
@@ -47,7 +53,7 @@ function getPassword() {
 
         fs.writeFile('gui-config.json', fileContent, function(err) {
             if (err) throw err;
-            console.log('saved!');
+            console.log(new Date()+'saved!');
         })
     })
 }
